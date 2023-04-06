@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="hiberP.Dept" table="tbl_dept">
+<id name="deptno" column="deptno">
+<generator class="assigned"></generator>
+</id>
+<property name="deptname" />
+<set name="children" cascade="all">
+<key column="depid"/>
+<one-to-many class="Empt"/>
+</set>
+</class>
+</hibernate-mapping>
